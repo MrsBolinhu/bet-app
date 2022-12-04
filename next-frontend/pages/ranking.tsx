@@ -38,7 +38,7 @@ const Ranking = () => {
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 pb-[100px]">
             {users.map((user, n) => {
               return(
-                <div className="pt-5">
+                <div key={user.email} className="pt-5">
                   <RankingCard position={n + 1} user={user}/>
                 </div>
               )

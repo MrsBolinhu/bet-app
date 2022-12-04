@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AdminContext, tabBarContext } from '../pages/_app'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const TabBar = () => {
 

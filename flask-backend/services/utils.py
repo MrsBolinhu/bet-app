@@ -31,7 +31,7 @@ def getLoginDetails():
             ##cur.execute("SELECT count(productId) FROM bets WHERE userId = " + str(userId))
             ##noOfBets = cur.fetchone()[0]
     conn.close()
-    return (loggedIn, username, session['email'])
+    return (loggedIn, username)
 
 def get_db_connection():
     conn = sqlite3.connect('database/database.db')

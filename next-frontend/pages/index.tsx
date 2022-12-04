@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 pb-[100px]">
           {games.map((match) => {
             return(
-                <Link href={{pathname: "/matchInfo", query: {
+                <Link key={match.id} href={{pathname: "/matchInfo", query: {
                   key: match.id,
                   partida: match.teams,
                   rodada: match.round,

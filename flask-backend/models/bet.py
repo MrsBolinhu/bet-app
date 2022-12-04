@@ -18,7 +18,7 @@ class Bet:
         with get_db_connection() as bet_database_connection:
             try:
                 database_cursor = bet_database_connection.cursor()
-                database_cursor.execute('INSERT INTO bets (home_score, visitor_score, id_game, email, winner, score, group_) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                database_cursor.execute('INSERT OR REPLACE INTO bets (home_score, visitor_score, id_game, email, winner, score, group_) VALUES (?, ?, ?, ?, ?, ?, ?)',
                            (int(self.home_score), int(self.visitor_score), int(self.id_game), str(self.email), str(self.winner), 0, str(self.group_)))
                 bet_database_connection.commit()          
             except:
