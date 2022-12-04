@@ -1,0 +1,45 @@
+name: E2E Tests
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+ Cypress-run:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Install node
+        uses: actions/setup-node@v2
+        with:
+            node:version: '14'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          pip install -r requirements.txt
+        working-directory: flask-backend
+      
+      - name: Run API in Background
+        run: python app.py &
+        working-directory: flask-backend
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v3
+        with:
+          working-directory: next-frontend
+          build: yarn build
+          start: yarn dev
