@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
-import requestService from '../service/api/request.service';
+import { requestService } from '../service';
 import { tabBarContext } from './_app';
 import { IBet } from '../types/bets';
 import { useRouter } from 'next/router';
 
 const Bets = () => {
 
-  const { showTabBar, setShowTabBar } = useContext(tabBarContext);
+  const { setShowTabBar } = useContext(tabBarContext);
   setShowTabBar(true)
   const router = useRouter()
 

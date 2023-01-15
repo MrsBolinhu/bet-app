@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import { useState, useEffect, useContext } from 'react'
 import { IMatch } from '../types/match'
-import requestService from '../service/api/request.service';
-import Card from '../components/Card';
+import { requestService } from '../service';
+import { Card } from '../components';
 import Link from 'next/link';
 import { tabBarContext } from './_app';
 import { useRouter } from 'next/router';
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
     }
   }, []);  
 
-  const { showTabBar, setShowTabBar } = useContext(tabBarContext);
+  const { setShowTabBar } = useContext(tabBarContext);
   setShowTabBar(true)
 
   const [games, setGames] = useState<IMatch[]>([])

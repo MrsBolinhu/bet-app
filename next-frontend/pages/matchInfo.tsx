@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { IMatch } from '../types/match'
 import { AdminContext, tabBarContext } from './_app';
-import requestService from '../service/api/request.service';
+import { requestService } from '../service';
 
 const MatchInfo = () => {
 
-  const { showTabBar, setShowTabBar } = useContext(tabBarContext);
+  const { setShowTabBar } = useContext(tabBarContext);
   setShowTabBar(true)
 
   const router = useRouter()
@@ -131,10 +130,6 @@ const MatchInfo = () => {
 
     </div>
   )
-}
-
-interface PropTypes {
-  dataMatch: IMatch
 }
 
 export default MatchInfo

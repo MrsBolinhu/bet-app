@@ -1,8 +1,7 @@
 import React from 'react'
 import { IUser } from '../types/user'
-import { getPicture } from '../utils/getPicture';
 
-const RankingCard = ({position, user}: PropTypes) => {
+export const RankingCard = ({position, user}: PropTypes) => {
   return (
     <>
       <div className="w-full container py-3 rounded-xl bg-secondaryDark shadow-[0_0_30px_rgba(0,0,0,0.25)]">
@@ -23,4 +22,3 @@ interface PropTypes{
   user: IUser,
   position: number
 }
-export default RankingCard

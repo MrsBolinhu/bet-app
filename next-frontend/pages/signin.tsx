@@ -1,22 +1,21 @@
 import { useState, useContext, createContext } from 'react'
 import MainLayout from '../layouts/MainLayout'
-import requestService from '../service/api/request.service';
+import { requestService } from '../service';
 import { AdminContext, tabBarContext } from '../pages/_app'
 import { useRouter } from 'next/router';
-import Toast from '../components/Toast'
+import { Toast } from '../components'
 
 export const ToastContext = createContext<any>(undefined);
 
 const SignIn = () => {
   const router = useRouter()
   
-  const { showTabBar, setShowTabBar } = useContext(tabBarContext);
+  const { setShowTabBar } = useContext(tabBarContext);
   setShowTabBar(false)
 
-  const { isAdmin, setIsAdmin } = useContext(AdminContext);
+  const { setIsAdmin } = useContext(AdminContext);
   
   const [showToast, setShowToast] = useState(false)
-  const toast = {showToast, setShowToast}
 
   const [user, setUser] = useState({
     email: "",

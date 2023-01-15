@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
-import requestService from '../service/api/request.service';
+import { requestService } from '../service';
 import { tabBarContext } from './_app';
 import { useRouter } from 'next/router';
 
 const Account = () => {
 
-  const { showTabBar, setShowTabBar } = useContext(tabBarContext);
+  const { setShowTabBar } = useContext(tabBarContext);
   setShowTabBar(true)
 
   const [showModal, setShowModal] = useState(false);

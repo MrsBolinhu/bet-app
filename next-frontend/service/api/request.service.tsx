@@ -1,7 +1,6 @@
-import api from './api'
+import { api } from './api'
 import PropTypes from 'prop-types'
 import { IBet } from '../../types/bets'
-import { IUser } from '../../types/user'
 
 interface PropTypes {
   email: string,
@@ -151,7 +150,7 @@ const registerResult = ({home_score, away_score, id_game}: any) => {
 
 }
 
-const requestService = {
+export const requestService = {
     getUserData,
     loginUser,
     logoutUser,

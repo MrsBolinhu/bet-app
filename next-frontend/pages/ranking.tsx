@@ -1,13 +1,13 @@
 import { useState, useEffect, useContext } from 'react'
 import { IUser } from '../types/user'
-import requestService from '../service/api/request.service';
-import RankingCard from '../components/rankingCard';
+import { requestService } from '../service';
+import { RankingCard } from '../components';
 import { tabBarContext } from './_app';
 import { useRouter } from 'next/router';
 
 const Ranking = () => {
 
-  const { showTabBar, setShowTabBar } = useContext(tabBarContext);
+  const { setShowTabBar } = useContext(tabBarContext);
   setShowTabBar(true)  
   const [userImage, setImage] = useState<any>('')
   const [users, setUsers] = useState<IUser[]>([])
