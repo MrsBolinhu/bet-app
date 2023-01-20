@@ -1,13 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { requestService } from '../service';
-import { tabBarContext } from './_app';
 import { useRouter } from 'next/router';
+import { useTabBarContext } from '../contexts';
 
 const Account = () => {
-
-  const { setShowTabBar } = useContext(tabBarContext);
-  setShowTabBar(true)
-
+  const { hide } = useTabBarContext()
   const [showModal, setShowModal] = useState(false);
   const [username, setUsername] = useState('')
   const [userImage, setImage] = useState<any>('')
@@ -38,6 +35,7 @@ const Account = () => {
     e.preventDefault()
     requestService.logoutUser()
     router.push('/signin')
+    hide
   }
 
   const handleChangeUsername = async (e: any) => {

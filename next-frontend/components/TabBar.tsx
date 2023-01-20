@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { AdminContext, tabBarContext } from '../pages/_app'
+import React, { useContext, useEffect } from 'react'
+import { useTabBarContext } from '../contexts';
+import { AdminContext } from '../pages/_app'
 
 export const TabBar = () => {
 
-    const { showTabBar } = useContext(tabBarContext)
+    const { tabBar } = useTabBarContext()
     const { isAdmin, setIsAdmin } = useContext(AdminContext);
     
     useEffect(() => {
@@ -14,7 +15,7 @@ export const TabBar = () => {
 
     return (
         <div className="">
-            {showTabBar &&
+            {tabBar &&
                 <div id="bottom-navigation" className="block fixed inset-x-0 bottom-0 z-10 bg-secondaryDark text-primaryLight shadow">
                     <div id="tabs" className="flex justify-between p-1">
                         <a href="/" className="w-full focus:text-teal-500 hover:text-indigo-600 justify-center inline-block text-center pt-2 pb-1">

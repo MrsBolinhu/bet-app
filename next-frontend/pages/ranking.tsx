@@ -2,13 +2,10 @@ import { useState, useEffect, useContext } from 'react'
 import { IUser } from '../types/user'
 import { requestService } from '../service';
 import { RankingCard } from '../components';
-import { tabBarContext } from './_app';
 import { useRouter } from 'next/router';
 
 const Ranking = () => {
-
-  const { setShowTabBar } = useContext(tabBarContext);
-  setShowTabBar(true)  
+ 
   const [userImage, setImage] = useState<any>('')
   const [users, setUsers] = useState<IUser[]>([])
   const router = useRouter()

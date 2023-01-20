@@ -1,14 +1,10 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import MainLayout from '../layouts/MainLayout'
-import { tabBarContext } from '../pages/_app'
 import { useRouter } from 'next/router';
 
 const SignUp = () => {
 
   const router = useRouter()
-
-  const { setShowTabBar } = useContext(tabBarContext);
-  setShowTabBar(false)
 
   const [user, setUser] = useState({
     email: '',

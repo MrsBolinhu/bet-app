@@ -1,12 +1,9 @@
 import { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { AdminContext, tabBarContext } from './_app';
+import { AdminContext } from './_app';
 import { requestService } from '../service';
 
 const MatchInfo = () => {
-
-  const { setShowTabBar } = useContext(tabBarContext);
-  setShowTabBar(true)
 
   const router = useRouter()
   const {partida, rodada, data, hora, estadio, key, grupo} = router.query
