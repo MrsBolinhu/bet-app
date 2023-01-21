@@ -12,3 +12,8 @@ export const useAdminContext = () => {
     const context = useContextValue()
     return context.admin
 }
+
+export const useUserContext = () => {
+    const context = useContextValue()
+    return context.user
+}
