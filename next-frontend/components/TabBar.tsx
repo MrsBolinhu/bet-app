@@ -1,15 +1,14 @@
 import React, { useContext, useEffect } from 'react'
-import { useTabBarContext } from '../contexts';
-import { AdminContext } from '../pages/_app'
+import { useTabBarContext, useAdminContext } from '../contexts';
 
 export const TabBar = () => {
 
     const { tabBar } = useTabBarContext()
-    const { isAdmin, setIsAdmin } = useContext(AdminContext);
+    const { isAdmin, setAdminMode } = useAdminContext();
     
     useEffect(() => {
         if (localStorage.getItem('is_admin') === '1'){
-          setIsAdmin(true)
+          setAdminMode()
         }
       }, [isAdmin]);
 

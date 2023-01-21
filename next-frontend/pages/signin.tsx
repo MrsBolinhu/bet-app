@@ -1,10 +1,9 @@
 import { useState, useContext, createContext } from 'react'
 import MainLayout from '../layouts/MainLayout'
 import { requestService } from '../service';
-import { AdminContext } from '../pages/_app'
 import { useRouter } from 'next/router';
 import { Toast } from '../components'
-import { useTabBarContext, useValueContext } from '../contexts';
+import { useTabBarContext, useAdminContext } from '../contexts';
 
 export const ToastContext = createContext<any>(undefined);
 
@@ -14,7 +13,7 @@ const SignIn = () => {
 
   const router = useRouter()
 
-  const { setIsAdmin } = useContext(AdminContext)
+  const { setAdminMode, unsetAdminMode } = useAdminContext()
   
   const [showToast, setShowToast] = useState(false)
 
@@ -31,8 +30,8 @@ const SignIn = () => {
       localStorage.clear()
     } else{
       if(localStorage.getItem('is_admin') === '1'){
-        setIsAdmin(true)
-      } else { setIsAdmin(false) }
+        setAdminMode()
+      } else { unsetAdminMode() }
       router.push('/')
       show()
     }

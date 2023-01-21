@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { AdminContext } from './_app';
 import { requestService } from '../service';
+import { useAdminContext } from '../contexts';
 
 const MatchInfo = () => {
 
@@ -9,13 +9,13 @@ const MatchInfo = () => {
   const {partida, rodada, data, hora, estadio, key, grupo} = router.query
   const [showModal, setShowModal] = useState(false);
   
-  const { isAdmin, setIsAdmin } = useContext(AdminContext);
+  const { isAdmin, setAdminMode } = useAdminContext();
 
   useEffect(() => {
     if (localStorage.getItem("user") === null){
       router.push('/signin')
     } else if (localStorage.getItem('is_admin') === '1'){
-      setIsAdmin(true)
+      setAdminMode()
     }
   }, []);
 

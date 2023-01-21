@@ -8,7 +8,7 @@ export const useTabBarContext = () => {
     return context.tab
 }
 
-export const useValueContext = () => {
+export const useAdminContext = () => {
     const context = useContextValue()
-    return context
+    return context.admin
 }
