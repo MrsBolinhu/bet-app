@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { requestService } from '../service';
 import { IBet } from '../types/bets';
 import { useRouter } from 'next/router';
