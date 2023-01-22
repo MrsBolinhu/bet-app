@@ -17,3 +17,8 @@ export const useUserContext = () => {
     const context = useContextValue()
     return context.user
 }
+
+export const useBetsContext = () => {
+    const context = useContextValue()
+    return context.bets
+}
