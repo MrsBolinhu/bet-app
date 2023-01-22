@@ -19,7 +19,7 @@ export const AppProvider = ({ children }: any) => {
 	useEffect(() => {
     async function loadUserData() {
         const response: any = await requestService.getUserData()
-        user.setUser(response.data[0])
+        user.setUser(response?.data[0])
     }
     loadUserData();
   }, [])  

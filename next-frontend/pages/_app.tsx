@@ -4,7 +4,6 @@ import { TabBar } from '../components';
 import { AppProvider } from '../contexts/provider';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  
   return (
     <AppProvider>
         <TabBar/>

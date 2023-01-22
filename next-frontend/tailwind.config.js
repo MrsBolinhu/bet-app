@@ -13,6 +13,9 @@ module.exports = {
       },
       backgroundImage: {
         'signup': "url('/assets/signup.jpg')",
+      },
+      widths: {
+        '12': '40px',
       }
     },
   },

@@ -1,5 +1,5 @@
 import { useTabBarContext } from '../../contexts'
-import { AccountButton, Divider, Logout, Trash } from '../../components';
+import { Item, Logout, Trash } from '../../components';
 import { useRouter } from 'next/router';
 import { requestService } from '../../service';
 
@@ -16,14 +16,10 @@ export const AccountContent = () => {
   
   return (
     <>
-      {/* <AccountButton onClick={() => setShowModal(true)} Icon={<Change />} Title={'Change username'} /> */}
-      <form >
-        <AccountButton onClick={handleLogout} Icon={<Logout />} Title={'Logout'} />
-      </form>
-      <Divider />
-      
+      {/* <Item onClick={() => setShowModal(true)} Icon={<Change />} Title={'Change username'} /> */}
+      <Item onClick={handleLogout} Icon={<Logout />} Title={'Logout'} />
       <form action="http://localhost:5000/delete_account">
-        <AccountButton Icon={<Trash />} Title={'Delete account'} />
+        <Item Icon={<Trash />} Title={'Delete account'} />
       </form>
     </>
   )

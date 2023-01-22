@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTabBarContext, useAdminContext } from '../../contexts';
-import { Archives, House, Trophy, User } from '../icons';
+import { Archives, House, Trophy, User } from '../Icons';
 import { TabBarButton } from './TabBarButton';
 
 export const TabBar = () => {

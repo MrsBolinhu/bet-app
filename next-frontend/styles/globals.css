@@ -1,3 +1,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer components {
+  .background {
+    @apply flex flex-col min-h-screen bg-primaryDark pt-[60px] px-6 justify-items-center text-primaryLight
+  }
+}
