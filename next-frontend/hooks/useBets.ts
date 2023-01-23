@@ -17,7 +17,7 @@ export const useBets = () => {
   useEffect(() => {
     async function loadBets() {
         const response: any = await requestService.listBets()
-        setBets(response.data)
+        setBets(response?.data)
     }
     loadBets();
   }, [])
